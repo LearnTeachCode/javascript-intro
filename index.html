@@ -1,0 +1,1708 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Intro to JavaScript Slides</title>
+
+		<meta name="description" content="Intro to JavaScript slides">
+		<meta name="author" content="Liz Krane">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<!-- light editor --><link rel="stylesheet" href="lib/css/light.css">
+		<!-- dark editor <link rel="stylesheet" href="lib/css/dark.css">-->
+		<!-- <link rel="stylesheet" href="lib/css/zenburn.css"> -->
+
+		<link rel="stylesheet" href="plugin/accessibility-helper/css/accessibility-helper.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+		<!-- If use the PDF print sheet so students can print slides-->
+		<link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print">
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+
+				<section>
+					<h1 style="line-height:1.1em; margin-top:0;margin-bottom:60px;">Intro to JavaScript</h1>
+
+
+					<p style="margin-top:100px;">
+						Slides by <a href="https://learningnerd.com">Liz Krane</a> / <a href="https://twitter.com/LearningNerd">@LearningNerd</a>
+					</p>
+				</section>
+
+				<section>
+					<h2>Tell us about yourself!</h2>
+
+						<ul>
+							<li>What's your name?</li>
+							<li>What awesome things do you hope to make with code?</li>
+							<li>What's one question you have about JavaScript?</li>
+						</ul>
+				</section>
+
+				<section>
+					<h2 style="color:#53555C">Bookmark These Slides:</h2>
+					<p style="margin-top:90px; font-size:1.8em; font-weight: bold;">
+						<a href="#">*****</a>
+					</p>
+
+					<p style="margin-top:90px;">Follow along on your laptop or phone!</p>
+				</section>
+
+
+				<section>
+					<h2>What is JavaScript?</h2>
+
+					<p style="margin-top:75px;">A quirky but powerful and ubiquitous programming language -- it's built into every modern web browser!</p>
+					<p style="margin-top:50px;" class="fragment">Originally a client-side language for making websites more interactive, but now <em>so much more</em>!</p>
+				</section>
+
+				<section>
+					<h2 style="font-size:1.4em;">Popularity of Programming Languages as of June 2016</h2>
+					<iframe width="960" height="420" src="https://redmonk.com/hist-rankings-full.html"><a href=""></a></iframe>
+					<p style="margin-top:10px;"><a href="https://redmonk.com/sogrady/2016/07/20/language-rankings-6-16/">Stats by RedMonk</a>, based on data from GitHub and StackOverflow</p>
+				</section>
+
+				<section>
+					<iframe width="960" height="540" src="https://www.youtube.com/embed/aSmqq9RbiaU?rel=0" frameborder="0" allowfullscreen></iframe>
+
+					<p style="margin-top:60px; font-size:1.6em;"><a href="https://g.co/super">g.co/super</a></p>
+				</section>
+
+				<section>
+					<iframe width="960" height="540" src="https://www.youtube.com/embed/17P67Uz0kcw?rel=0" frameborder="0" allowfullscreen></iframe>
+
+					<p style="margin-top:40px; font-size:1.6em;"><a href="https://www.chrome.com/racer">chrome.com/racer</a></p>
+
+					<p style="margin-top:40px;"><a href="https://master.html5rocks-hrd.appspot.com/en/tutorials/casestudies/racer/">Read their article on how it was built</a></p>
+				</section>
+
+				<section>
+					<h2 style="color:#53555C;font-size:1.2em;line-height:1em;">A Few of My Favorite JavaScript Libraries</h2>
+
+					<p><a href="http://paperjs.org/">PaperJS.org</a></p>
+
+					<p><a href="https://nodejs.org/en/">NodeJS.org</a></p>
+
+					<p><a href="https://d3js.org/">d3JS.org</a></p>
+
+					<p><a href="http://jlord.us/sheetsee.js/">jlord.us/sheetsee.js</a></p>
+
+					<p><a href="http://johnny-five.io/">johnny-five.io</a></p>
+
+					<p><a href="http://leafletjs.com/">leafletJS.com</a></p>
+
+					<p><a href="http://letteringjs.com/">letteringJS.com</a></p>
+
+					<p><a href="http://underlinejs.org/">underlineJS.org</a></p>
+
+					<p><a href="http://phaser.io/">phaser.io</a></p>
+
+					<p><a href="http://www.createjs.com/soundjs">createJS.com/soundjs</a></p>
+
+					<p><a href="http://lab.hakim.se/reveal-js/">revealJS.com</a></p>
+
+					<p><a href="https://www.smore.com/clippy-js">smore.com/clippy-js</a></p>
+				</section>
+
+				<section>
+					<h2>Let's build something with JavaScript!</h2>
+				</section>
+
+				<section>
+					<h3 style="margin-bottom: 10px;">How to open your web browser's JavaScript console</h3>
+					<ul>
+						<li><strong>Chrome:</strong>
+							<ul><li style="margin-top:20px;">
+								<strong><em>Windows:</em></strong> Ctrl + Shift + <strong>J</strong>
+							</li>
+							<li>
+								<strong><em>Mac:</em></strong> Cmd + Opt + <strong>J</strong>
+							</li>
+							</ul>
+						</li>
+						<li><strong>Firefox:</strong>
+							<ul><li style="margin-top:20px;">
+								<strong><em>Windows:</em></strong> Ctrl + Shift + <strong>K</strong>
+							</li>
+							<li>
+								<strong><em>Mac:</em></strong> Cmd + Opt + <strong>K</strong>
+							</li>
+							</ul></li>
+						<li><strong>Safari / <em>Mac:</em></strong> Cmd + Opt + <strong>C</strong>
+							<ul><li style="margin-top:20px;">
+								<em>Note: first you may need to enable web inspector (<a href="https://developer.apple.com/library/mac/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/GettingStarted/GettingStarted.html">see instructions here</a>)</em>
+							</li></ul>
+						</li>
+					</ul>
+				</section>
+
+
+				<section>
+					<div style="float:left;width: 75%">
+						<pre class="fragment fade-out overlay" data-fragment-index="0"><code class="javascript smaller" data-trim contenteditable="" style="height:470px;">
+// Now let's use JavaScript to interact with the HTML!
+
+// First try clicking on the button to the right    > > >
+// It doesn't do anything yet, but we'll fix that!
+
+						</code></pre>
+
+						<pre class="fragment current-visible overlay" data-fragment-index="0"><code class="javascript smaller" data-trim contenteditable="" style="height:470px;">
+// The HTML for the button is:
+// &lt;button id=&quot;testbutton&quot;&gt;Click me!&lt;/button&gt;
+
+// So we can create a variable for the button like this:
+var button = document.getElementById('testbutton');
+
+						</code></pre>
+
+						<pre class="fragment current-visible overlay"><code class="javascript smaller" data-trim contenteditable="" style="height:470px;">
+// The HTML for the button is:
+// &lt;button id=&quot;testbutton&quot;&gt;Click me!&lt;/button&gt;
+
+// So we can create a variable for the button like this:
+var button = document.getElementById('testbutton');
+
+// and change the text inside it like this:
+button.textContent = 'testing one two three!';
+						</code></pre>
+
+						<pre class="fragment current-visible overlay"><code class="javascript smaller" data-trim contenteditable="" style="height:470px;">
+// The HTML for the button is:
+// &lt;button id=&quot;testbutton&quot;&gt;Click me!&lt;/button&gt;
+
+// So we can create a variable for the button like this:
+var button = document.getElementById('testbutton');
+
+// and change the text inside it like this:
+button.textContent = 'testing one two three!';
+
+// Let's do the same with the box below the button:
+var displayBox = document.getElementById('testdisplay');
+						</code></pre>
+
+						<pre class="fragment current-visible overlay"><code class="javascript smaller" data-trim contenteditable="" style="height:470px;">
+// The HTML for the button is:
+// &lt;button id=&quot;testbutton&quot;&gt;Click me!&lt;/button&gt;
+
+// So we can create a variable for the button like this:
+var button = document.getElementById('testbutton');
+
+// and change the text inside it like this:
+button.textContent = 'testing one two three!';
+
+// Let's do the same with the box below the button:
+var displayBox = document.getElementById('testdisplay');
+
+// and change the text inside the box too:
+displayBox.textContent = 'JavaScript is magical!';
+						</code></pre>
+
+						<pre class="fragment current-visible overlay"><code class="javascript smaller" data-trim contenteditable="" style="height:470px;">
+// Now let's define a new function that does this:
+function sayHello() {
+	displayBox.textContent = 'Hello, world!';
+};
+
+// And let's call the function to check that it works:
+sayHello();
+						</code></pre>
+
+						<pre class="fragment current-visible overlay"><code class="javascript smaller" data-trim contenteditable="" style="height:470px;">
+// Now let's define a new function that does this:
+function sayHello() {
+	displayBox.textContent = 'Hello, world!';
+};
+
+// Finally, let's run this function when the button is clicked!
+button.addEventListener('click', sayHello);
+
+// It has 3 parts:
+//  1) the HTML element where the event happens (button)
+//  2) the type of event ('click')
+//    REFERENCE:
+//    https://developer.mozilla.org/en-US/docs/Web/Events
+//  3) the function to run (sayHello)
+						</code></pre>
+
+						<pre class="fragment current-visible overlay"><code class="javascript smaller" data-trim contenteditable="" style="height:470px;">
+// The complete code:
+
+var button = document.getElementById('testbutton');
+var displayBox = document.getElementById('testdisplay');
+
+function sayHello() {
+	displayBox.textContent = 'Hello, world!';
+};
+
+button.addEventListener('click', sayHello);
+
+// Tinker with it here:
+// https://codepen.io/LearnToCodeLA/pen/ZONyjP
+						</code></pre>
+
+					</div>
+
+					<div style="float:left;margin-top:70px;width: 25%;">
+						<button id="testbutton" class="testbutton" style="font-size: 40px; padding: 20px;">Click me!</button>
+	  					<p id="testdisplay" style="border: 2px solid black; font-size:30px; padding: 20px; margin-top: 40px;">
+							Display messages here
+						</p>
+					</div>
+				</section>
+
+
+
+
+
+								<section data-state="movethebox">
+									<div style="float:left;width:75%">
+										<pre class=""><code class="javascript smaller" data-trim contenteditable="" style="height:470px;">
+// Press W, A, S, and D on your keyboard to move the box!
+
+var box = document.getElementById('movebox');
+
+window.addEventListener('keydown', moveBox);
+
+function moveBox(event) {
+  if (event.keyCode == '83') {
+	var currentTopPosition = parseInt(box.style.top, 10);
+	var newTopPosition = currentTopPosition + 10;
+	box.style.top = newTopPosition + 'px';
+  }
+
+  if (event.keyCode == '87') {
+	var currentTopPosition = parseInt(box.style.top, 10);
+	var newTopPosition = currentTopPosition - 10;
+	box.style.top = newTopPosition + 'px';
+  }
+
+  if (event.keyCode == '68') {
+	var currentLeftPosition = parseInt(box.style.left, 10);
+	var newLeftPosition = currentLeftPosition + 10;
+	box.style.left = newLeftPosition + 'px';
+  }
+
+  if (event.keyCode == '65') {
+	var currentLeftPosition = parseInt(box.style.left, 10);
+	var newLeftPosition = currentLeftPosition - 10;
+	box.style.left = newLeftPosition + 'px';
+  }
+
+}
+										</code></pre>
+
+									</div>
+
+									<div style="float:left;margin-top:100px;width:25%;">
+										<p id="movebox" style="width:200px;height:200px;background:lightblue;position:absolute;top:110px;left:820px;transition:0.1s;"></p>
+									</div>
+
+									</section>
+
+									<section>
+										<iframe height='542' scrolling='no' src='https://codepen.io/jeffibacache/embed/bzBsp/?height=542&theme-id=dark&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/jeffibacache/pen/bzBsp/'>Playable Canvas Asteroids</a> by Jeff Ibacache (<a href='https://codepen.io/jeffibacache'>@jeffibacache</a>) on <a href='https://codepen.io'>CodePen</a>.
+										</iframe>
+									</section>
+
+									<section>
+										<h2>Group Googling Challenge:</h2>
+										<h3>Make a Box Turn Random Colors!</h3>
+									</section>
+
+									<section>
+										<div style="float:left;width:75%">
+											<pre><code class="javascript smaller" data-trim contenteditable="" style="height:470px;">
+var colorBox = document.getElementById('colorbox');
+
+colorBox.addEventListener('click', randomColor);
+
+function randomColor() {
+
+  // Your code here! Go Googling!
+
+  // HINT 1: Find out how to generate a random hex color
+
+  // HINT 2: Find out how to use JavaScript to change
+  //         the background color of an element
+
+  // HINT 3: Don't forget hex colors need a # in front!
+
+}
+											</code></pre>
+
+										</div>
+
+										<div style="float:left;margin-top:100px;width:25%;">
+											<p id="colorbox" style="width:200px;height:200px;background:lightblue;position:absolute;top:110px;left:820px;transition:0.1s;"></p>
+										</div>
+
+									</section>
+
+									<section data-state="colorthebox">
+										<div style="float:left;width:75%;">
+											<pre><code class="javascript smaller" data-trim contenteditable="" style="height:470px;">
+// Did you learn anything interesting? :)
+
+// HERE'S THE SOLUTION:
+
+var colorBoxSolved = document.getElementById('colorboxsolved');
+
+colorBoxSolved.addEventListener('click', randomColor);
+
+function randomColor() {
+
+ colorBoxSolved.style.background = '#' +
+          Math.floor(Math.random()*16777215).toString(16);
+
+}
+// SOURCE:
+// https://css-tricks.com/snippets/javascript/random-hex-color/
+											</code></pre>
+
+										</div>
+
+										<div style="float:left;margin-top:100px;width:25%;">
+											<p id="colorboxsolved" style="width:200px;height:200px;background:lightblue;position:absolute;top:110px;left:820px;transition:0.1s;"></p>
+										</div>
+
+									</section>
+
+
+
+
+
+
+
+<section>
+	<h2>Let's build a Mad Libs game!</h2>
+</section>
+
+<section>
+	<iframe src="madlibs/index.html" width="960" height="850" style="margin-top:-100px;"><a href="madlibs">Mad Libs demo</a></iframe>
+</section>
+
+<section>
+	<h2 style="font-size:1.4em;">What do we need to build this app?</h2>
+	<!--
+		we ask the students to describe what each part does, as review:
+	-->
+	<h3 class="green fragment">HTML</h3>
+	<h3 class="green fragment">CSS</h3>
+	<h3 class="green fragment">JavaScript</h3>
+</section>
+
+<section>
+	<h2 style="font-size:1.5em;margin-bottom:60px;">What does our JavaScript code need to do for this app?</h2>
+	<p class="fragment" style="margin-bottom:40px;">Get user input from the HTML <code>&lt;input&gt;</code> elements</p>
+	<p class="fragment" style="margin-bottom:40px;">Combine user input with our Mad Lib story</p>
+	<p class="fragment">Show finished Mad Lib when user clicks the button</p>
+	<p class="fragment green" style="margin-top:70px;">...but how do we do all that??</p>
+</section>
+
+<section>
+	<h2 style="font-size:1.5em;">Today's JavaScript concepts:</h2>
+	<ul class="less-margin">
+		<li>Using your web browser's console</li>
+		<li>Variables</li>
+		<li>Data types, starting with strings</li>
+		<li>Combining strings (concatenation)</li>
+		<li>Linking JavaScript files to HTML files</li>
+		<li>Built-in JavaScript functions</li>
+		<!-- reminders for later:
+			show DOCUMENTATION resources!
+			console.log
+			getElementById
+			also use .value and .innerHTML for Mad Libs
+		-->
+		<li>Creating your own functions</li>
+		<li>Using JavaScript to access HTML elements</li>
+		<li>JavaScript event listeners</li>
+		<!-- reminders for later:
+			show DOCUMENTATION resources, list of events!
+			...mind BLOWN: functions can take other functions as parameters!
+		-->
+	</ul>
+</section>
+
+<section>
+	<h3 style="margin-bottom: 30px;margin-top:-50px;">How to open your web browser's JavaScript console:</h3>
+	<ul>
+		<li><strong>Chrome:</strong>
+			<ul><li style="margin-top:20px;">
+				<strong><em>Windows:</em></strong> Ctrl + Shift + <strong>J</strong>
+			</li>
+			<li>
+				<strong><em>Mac:</em></strong> Cmd + Opt + <strong>J</strong>
+			</li>
+			</ul>
+		</li>
+		<li><strong>Firefox:</strong>
+			<ul><li style="margin-top:20px;">
+				<strong><em>Windows:</em></strong> Ctrl + Shift + <strong>K</strong>
+			</li>
+			<li>
+				<strong><em>Mac:</em></strong> Cmd + Opt + <strong>K</strong>
+			</li>
+			</ul></li>
+		<li><strong>Safari / <em>Mac:</em></strong> Cmd + Opt + <strong>C</strong>
+			<ul><li style="margin-top:20px;">
+				<em>Note: first you may need to enable web inspector (<a href="https://developer.apple.com/library/mac/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/GettingStarted/GettingStarted.html">see instructions here</a>)</em>
+			</li></ul>
+		</li>
+	</ul>
+</section>
+
+<section>
+	<h2>So what are variables?</h2>
+	<p>A variable is a symbolic name for a piece of information that can change over time.</p>
+	<pre><code class="javascript big" data-trim contenteditable="">
+		var myName = 'Sally Awesomepants';
+	</code></pre>
+	<p>Try it out! Copy and paste this code into your console. To run your code, hit enter.</p>
+	<!--
+		VERBAL instructions:
+		- note that now it's saved in memory, even if it hasn't done anything with the var yet!
+		- then try running "myName" and it will print it back out for you
+	-->
+</section>
+
+<section>
+	<h2 style="font-size:1.5em;">Important notes on variables:</h2>
+	<ul>
+		<li>Use the <code>var</code> keyword to define a <em>new</em> variable</li>
+		<li>New variables need to have unique names</li>
+		<li>Variable names are CASE SENSITIVE, cannot contain spaces, and cannot begin with numbers</li>
+		<li>Bonus link: <a href="http://stackoverflow.com/questions/1661197/what-characters-are-valid-for-javascript-variable-names" target="_blank">"What characters are valid for JavaScript variable names?" (the answer might surprise you!)</a></li>
+	</ul>
+</section>
+
+<section>
+	<h2>Creating new variables</h2>
+	<p>Variables can be created with an initial value or without any value at all (<code>undefined</code>):</p>
+	<pre><code class="javascript big" data-trim contenteditable="">
+var favoriteAnimal = 'penguin';
+var favoriteColor;
+	</code></pre>
+	<p>Try it out! Run this code, then type each variable name (don't forget to press "enter"!) and the console will show their values.</p>
+</section>
+
+<section>
+	<h2 style="font-size:1.5em;">Changing the value of a variable</h2>
+	<p>After a variable has been created, you can change it <em>without</em> using the <code>var</code> keyword:
+	<pre><code class="javascript big" data-trim contenteditable="">
+var favoriteFood = 'salad';
+// Actually, I changed my mind!
+favoriteFood = 'pizza';
+	</code></pre>
+	<p>Try it yourself in the console!</p>
+</section>
+
+<section>
+	<h2>JavaScript comments</h2>
+	<p>Comments are ignored by the computer but very useful for us humans to keep our code organized:</p>
+	<pre style="font-size:0.6em;"><code class="javascript" data-trim contenteditable="">
+// This is a single-line comment.
+
+/*	This is a multi-line comment!
+
+  Comments help us humans stay sane. You can use them for:
+  - notes to explain how your code works
+  - to-do lists and reminders
+  - links to sources or references, like this one about JS comments:
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Comments
+*/
+	</code></pre>
+		<p>Single-line comments start with <code class="green bold">//</code></p>
+		<p>Multi-line comments start with <code class="green bold">/*</code> and end with <code class="green bold">*/</code></p>
+</section>
+
+<section>
+	<h2>Data types</h2>
+	<p>Variables can contain different types of data, like strings, numbers, and more!</p>
+	<pre><code class="javascript" data-trim contenteditable="">
+var adjective = 'purple';
+var favoriteNumber = 3;
+	</code></pre>
+	<p class="small">The computer stores everything as 1s and 0s, but it <em>interprets</em> the 1s and 0s differently depending on what data type they are.</p>
+	<p class="small" style="margin-top:30px;">For example: "0001" might represent the number 1, the letter A, the value TRUE, or something else!</p>
+</section>
+
+<section>
+	<h2 style="font-size:1.5em;">A chunk of text is called a <strong>string</strong></h2>
+
+	<p>Strings are a bunch of symbols <em>strung</em> together into a sentence, just like alphabet beads on a necklace.</p>
+	<!--
+	LATER: section on converting data types:
+		<li class="fragment highlight-current-blue">If a string contains a number (<code>var myString = "5"</code>), the computer treats it as text.</li>
+	Also later:
+	- escaping strings, special characters
+	-->
+	</ul>
+	<img src="img/letter-beads.jpg" class="noborder">
+
+	<p>Strings are always surrounded by quote marks, either single (<code class="green bold">' '</code>) or double (<code class="green bold">" "</code>).</p>
+	<p class="small">It doesn't matter which you choose, as long as the opening and closing quote marks match!</p>
+
+	<p><cite>Photo by <a href="https://www.flickr.com/photos/smkybear/2066237409" target="_blank">Wendy (smkybear) on Flickr</a></cite></p>
+</section>
+
+<section>
+	<h2 style="font-size:1.2em;">What if your string contains a quote mark?</h2>
+	<p>Since strings are always surrounded by quote marks, if your string also <em>contains</em> a quote mark,<br> you'll run into trouble!</p>
+	<pre><code class="javascript" data-trim contenteditable="">
+var brokenString = 'I think I'm doing this wrong!';
+	</code></pre>
+	<p>Try it out in the console. Did you get an error?</p>
+	<p>Let's see how to fix it...</p>
+</section>
+
+<section>
+	<h2 style="font-size:1.4em;">Solution 1: Use different quote marks</h2>
+	<p>You can use double (<code class="green bold">" "</code>) quote marks to surround a string containing a single quote:</p>
+	<pre><code class="javascript" data-trim contenteditable="">
+var fixedString1 = "I think I'm doing this right!";
+	</code></pre>
+
+	<p>Or vice versa, you can use single quotes (<code class="green bold">' '</code>) to surround a string containing a double quote:</p>
+	<pre><code class="javascript" data-trim contenteditable="">
+var fixedString2 = 'I shouted "Yay!" when it worked.';
+	</code></pre>
+</section>
+
+<section>
+	<h2 style="font-size:1.4em;">Solution 2: Escaping characters</h2>
+	<p>You can <strong>escape</strong> special characters like quote marks by adding a backslash (<code class="green bold">\</code>) in front of them:</p>
+	<pre style="margin: 50px 0;"><code class="javascript" data-trim contenteditable="">
+var fixedString3 = 'Yay, I\'m escaping strings!';
+	</code></pre>
+
+	<p>Escape notation is also used for printing special characters like tab (<code class="green bold">\t</code>) and new line (<code class="green bold">\n</code>).
+		 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">See more on strings in this reference page</a>.</p>
+</section>
+
+<section>
+	<h2>Connecting strings together</h2>
+	<p>So you've already defined some strings like <code>favoriteAnimal</code> and <code>favoriteFood</code>, but how can you combine them into a sentence?</p>
+
+	<!--
+		ASK: if you were inventing your own programming language, how would you do it?
+		Get a couple volunteers to say what they would type, before showing answer.
+
+	-->
+
+	<pre class="fragment"><code class="javascript" data-trim contenteditable="">
+		var sentence = 'My name is ' + myName + ' and I rock!';
+	</code></pre>
+	<p class="fragment">Try it! Run this code in your console. Then type "sentence" and hit enter, and you'll see the output:<br> <b>I am Sally Awesomepants and I rock!</b></p>
+	<p class="fragment small blue" style="margin-top:40px;"><strong>Note:</strong> The console remembers the <code>myName</code> variable that you defined earlier, because it's saved in memory until you close your browser tab. Neat, huh?</p>
+</section>
+
+<section>
+	<p style="margin-bottom:60px;">Now run this code in your console:</p>
+	<pre><code class="javascript" data-trim contenteditable="">
+var madLib = 'Yesterday I found a ' + adjective + ' ' + favoriteAnimal + ' with ' + favoriteNumber + ' eyes eating ' + favoriteFood + ' on my dining table and writing JavaScript on my computer! It wrote some code that concatenated strings, so I ran the code and the ouput was: ' + sentence;
+	</code></pre>
+	<p style="margin-top:60px;">After running the code, remember to type <code>madLib</code> and hit enter to see the value of the madLib string!</p>
+</section>
+
+<section>
+	<h2 style="font-size:1.3em;margin-bottom:60px;">Combining strings = concatenation</h2>
+	<p>The fancy technical term for combining strings is called <strong class="green">concatenation</strong>. Say that ten times fast!</p>
+	<p style="margin-top:60px;">When used with strings, the <strong>+</strong> symbol is called the <strong>concatenation operator</strong>.</p>
+</section>
+
+
+
+
+
+<section>
+	<h2 style="font-size:1.4em;margin-top:-35px;">Challenge: Write your own Mad Lib</h2>
+<!--
+		Now we're each going to make our own Mad Lib and share it with each other.
+
+		DEMONSTRATE creating a new one based on the template and pasting into the Google doc.
+-->
+	<ol class="medium-margin">
+		<li>Go to this website: <a href="https://repl.it/languages/javascript" target="_blank">repl.it/languages/javascript</a></li>
+		<li>Create your own Mad Lib story based on this example: <a href="https://repl.it/EArM" target="_blank">repl.it/EArM</a></li>
+		<li>Click "Run" at the top to test it. Make sure your code includes <code>console.log(madLib);</code> at the end!</li>
+		<li>When you're done, click "Save" at the top and when it asks you to log in, click "continue as Anonymous" (the small text at the bottom of the popup)</li>
+		<li>Click "Share" at the top, copy the link, and paste it into here with your name: <a href="https://goo.gl/ELnYzm" target="_blank">goo.gl/ELnYzm</a></li>
+		<li>Try each others' Mad Libs and have a good laugh!</li>
+	</ol>
+</section>
+
+<section>
+	<h1>JavaScript Files</h1>
+</section>
+
+<section>
+	<h2 style="font-size:1.5em;">Let's set up our project</h2>
+	<ol class="medium-margin">
+		<li>Create a new folder named <code>madlibs</code> somewhere easy to find (maybe on your Desktop)</li>
+		<li>Open up your text editor (like <a href="https://atom.io/" target="_blank">Atom</a> or <a href="https://www.sublimetext.com/" target="_blank">Sublime</a>)</li>
+		<li>Create a new HTML file called <code>index.html</code> and save it in your madlibs folder</li>
+		<li>Create a new CSS file called <code>style.css</code> and save it in your madlibs folder</li>
+		<li>Create a new JavaScript file called <code>madlibs.js</code> and save it in your madlibs folder</li>
+	</ol>
+</section>
+
+<section>
+	<h2  style="font-size:1.5em;">Copy this into your index.html file:</h2>
+<pre style="font-size:0.5em;"><code class="html" data-trim contenteditable="">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&Tab;&lt;head&gt;
+&Tab;&Tab;&lt;title&gt;Mad Libs! (Girl Develop It LA - Intro to JavaScript)&lt;/title&gt;
+&Tab;&Tab;&lt;meta charset=&quot;utf-8&quot;&gt;
+&Tab;&Tab;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+&Tab;&Tab;&lt;link href=&quot;style.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+&Tab;&Tab;&lt;link href=&quot;https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise&quot; rel=&quot;stylesheet&quot;&gt;
+&Tab;&lt;/head&gt;
+
+&Tab;&lt;body&gt;
+&Tab;&Tab;&lt;h1&gt;Mad Libs!&lt;/h1&gt;
+
+&Tab;&Tab;&lt;div id=&quot;madlib&quot;&gt;&lt;/div&gt;
+
+&Tab;&Tab;&lt;strong&gt;Noun&lt;/strong&gt; (ex: tree, person): &lt;input type=&quot;text&quot; id=&quot;noun&quot; class=&quot;fill&quot;&gt;
+&Tab;&Tab;&lt;strong&gt;Past Tense Verb&lt;/strong&gt; (ex: jumped, ate): &lt;input type=&quot;text&quot; id=&quot;verb&quot; class=&quot;fill&quot;&gt;
+&Tab;&Tab;&lt;strong&gt;Adjective&lt;/strong&gt; (ex: happy, purple): &lt;input type=&quot;text&quot; id=&quot;adjective&quot; class=&quot;fill&quot;&gt;
+
+&Tab;&Tab;&lt;button id=&quot;submit&quot;&gt;Create Mad Lib&lt;/button&gt;
+
+&Tab;&Tab;&lt;p class=&quot;small&quot;&gt;Based on a practice project from &lt;a href=&quot;https://dash.generalassemb.ly/&quot;&gt;Dash by General Assembly&lt;/a&gt;&lt;/p&gt;
+
+&Tab;&Tab;&lt;script src=&quot;madlibs.js&quot;&gt;&lt;/script&gt;
+&Tab;&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</section>
+
+<section>
+	<h2 style="font-size:1.5em;">Copy this into your style.css file:</h2>
+<pre style="font-size:0.5em;"><code class="css" data-trim contenteditable="">
+body {
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	margin: 0 auto;
+	text-align: center;
+	padding: 0 20px;
+	max-width: 800px;
+	font-size: 25px;
+	background: #efefef;
+}
+
+button {
+	font-size: 25px;
+	font-weight: bold;
+	padding: 10px;
+	margin: 10px;
+}
+
+input.fill {
+	display: block;
+	width: 400px;
+	max-width:95%;
+	margin:0 auto;
+	margin-bottom: 20px;
+	box-sizing: border-box;
+}
+
+.fill {
+	font-size: 30px;
+	font-weight: bold;
+	font-family: 'Waiting for the Sunrise', cursive;
+	letter-spacing: 5px;
+	background: white;
+	color: red;
+	margin-left: 4px;
+	margin-right: 4px;
+	padding: 5px 15px;
+}
+
+#madlib {
+	font-size: 30px;
+	line-height: 2.5;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+h1 {
+	font-size: 80px;
+	margin: 0;
+	color: red;
+	font-family: 'Waiting for the Sunrise', cursive;
+	font-weight: bold;
+	letter-spacing: 7px;
+}
+
+.small {
+	font-size:0.5em;
+	font-style: italic;
+	margin-top: 30px;
+}
+</code></pre>
+</section>
+
+<section>
+	<h2 style="font-size:1.4em;">How to link your JS and HTML files</h2>
+
+	<p class="small">In our HTML file, we use the <code>&lt;script&gt;</code> tag with the <code>src</code> attribute at the end of the <code>body</code> element to link it with our JavaScript file:</p>
+
+<pre style="font-size:0.6em;"><code class="html" data-trim contenteditable="">
+	&lt;html&gt;
+&lt;!DOCTYPE html&gt;
+&Tab;&lt;head&gt;
+		<!-- other HTML here -->
+&Tab;&lt;/head&gt;
+&Tab;&lt;body&gt;
+		<!-- and more HTML here -->
+
+&Tab;&Tab;&lt;script src=&quot;madlibs.js&quot;&gt;&lt;/script&gt;
+&Tab;&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+	<p class="small">Note that here we assume <code>madlibs.js</code> is in the same folder as the HTML file that's linking to it.</p>
+
+</section>
+
+
+
+
+
+
+<section>
+	<h2>JavaScript Functions</h2>
+</section>
+
+<section>
+	<h2  style="font-size:1.4em;">Meet your first built-in function: <code>console.log</code>!</h2>
+
+	<p>Paste this code into your <code>madlibs.js</code> file, save it, and then open <code>index.html</code> in your web browser:</p>
+
+<pre><code class="javascript" data-trim contenteditable="">
+console.log('Hello world!');
+</code></pre>
+
+	<p>Now open the browser console. You should see the message <code>"Hello world!"</code></p>
+
+</section>
+
+<section>
+	<p>The <code>console.log</code> function displays information in the console. Use it to confirm that your code is doing what you think it's doing!</p>
+	<img src="img/console-log-all-the-things.jpg" class="noborder" style="margin:30px 0;">
+	<p>This <em>log</em> of information is similar to the <a target="_blank" href="https://en.wikipedia.org/wiki/Logbook">logbooks</a> used by ship captains to track important events.</p>
+</section>
+
+<section>
+	<p>Fun fact: most web browsers support fancy customizations, like styling the messages with CSS!</p>
+	<img src="img/console-css.png"  style="margin:30px 0;">
+	<p>See more advanced tricks in <a target="_blank" href="https://developers.google.com/web/tools/chrome-devtools/console/console-write">Chrome's documentation</a></p>
+</section>
+
+<section>
+	<h2>So what are functions?</h2>
+
+	<p>A function is a reusable chunk of code that performs a particular action.</p>
+
+	<img src="img/function-machine.png" class="noborder">
+
+	<p>In mathematics, a function transforms input(s) into output. But for JavaScript functions, the inputs and output are optional.</p>
+
+	<!-- <p class="small">Programming languages typically provide a bunch of built-in functions (like <code>console.log</code>), but you can also create your own functions!</p> -->
+</section>
+
+<section>
+	<h2>Running functions</h2>
+
+	<p>To run or <em>call</em> a function, type its name followed by<br> <code class="green bold">( );</code> with any inputs listed inside the parentheses:</p>
+
+<pre><code class="javascript" data-trim contenteditable="">
+// One string input:
+console.log('I am a string');
+
+// Three string inputs:
+console.log('string1', 'string2', 'string3');
+
+// Or no inputs at all:
+console.log();
+</code></pre>
+
+<p>Functions in JavaScript can take zero, one, or more inputs separated by commas.</p>
+
+</section>
+
+<section>
+	<h2>Function inputs</h2>
+
+	<p>Any variable or data type can be used as input for a function, and you can mix and match:</p>
+
+<pre><code class="javascript" data-trim contenteditable="">
+var favoriteNumber = 5;
+// Using a variable containing a number as input:
+console.log(favoriteNumber);
+
+var animal = 'penguins';
+// You can mix and match data types:
+console.log('I found ', favoriteNumber, animal);
+</code></pre>
+
+<p>JavaScript functions can even take other functions as their inputs! But more on that later.</p>
+
+</section>
+
+<section>
+	<h2 style="font-size:1.4em;">Defining your own custom functions</h2>
+
+	<p>JavaScript has lots of built-in functions, but you can also create your own!</p>
+
+<pre><code class="javascript" data-trim contenteditable="">
+// Defining a function called shout:
+function shout (phrase) {
+	console.log(phrase + '!!!');
+}
+
+// Running (or calling) the function:
+shout('I love JavaScript');
+shout('Functions rock');
+</code></pre>
+
+<p>Try it out! First you <strong>define</strong> your function, and then you can <strong>call</strong> it as many times as you want.</p>
+
+</section>
+
+<section>
+	<h2 style="font-size:1.4em;">Parts of a function definition</h2>
+
+<pre style="font-size:1.1em;">
+<span class="fragment highlight-current-red" data-fragment-index="0">function</span> <span class="fragment highlight-current-red"  data-fragment-index="1">shout</span> <span class="fragment highlight-current-red"  data-fragment-index="2">(phrase)</span> <span class="fragment highlight-current-red"  data-fragment-index="3">{
+   console.log(phrase + '!!!');
+}</span>
+</pre>
+
+<!-- <p><span class="fragment highlight-current-red" data-fragment-index="0"><span class="bold">1)</span> the <code>function</code> keyword</span>, <span class="fragment highlight-current-red" data-fragment-index="1"><span class="bold">2)</span> the name of the function</span>, <span class="fragment highlight-current-red" data-fragment-index="2"><span class="bold">3)</span> parentheses containing optional inputs (parameters)</span>, and <span class="fragment highlight-current-red" data-fragment-index="3"><span class="bold">4)</span> curly brackets containing the body of the function or the code that it will run.</span></p> -->
+
+<ol class="less-margin">
+	<li><span class="fragment highlight-current-red" data-fragment-index="0">The <code>function</code> keyword</span></li>
+	<li><span class="fragment highlight-current-red" data-fragment-index="1">The name of the function (follow same naming rules as variables)</span></li>
+	<li><span class="fragment highlight-current-red" data-fragment-index="2">Parentheses containing optional inputs (called parameters)</span></li>
+	<li><span class="fragment highlight-current-red" data-fragment-index="3">Curly brackets containing the code that it will run (called the function body)</span></li>
+</ol>
+
+</section>
+
+<section>
+	<p>Defining a function with multiple <em>parameters</em>:</p>
+<pre><code class="javascript" data-trim contenteditable="">
+// Defining a function with 3 parameters:
+function displayThreeWords (word1, word2, word3) {
+	console.log(word1 + ' ' + word2 + ' ' + word3);
+}
+</code></pre>
+
+<p>Running the function with multiple <em>arguments</em>:</p>
+<pre><code class="javascript" data-trim contenteditable="">
+// Running the function with 3 arguments:
+displayThreeWords('pineapple', 'motorboat', 'toothbrush');
+</code></pre>
+
+</section>
+
+<section>
+	<h2>Parameters vs arguments</h2>
+
+		<!-- <ul>
+			<li>A <span class="green bold">parameter</span> refers to a function's input regardless of any specific value, like when we <strong>define</strong> the function.</li>
+			<li>An <span class="blue bold">argument</span> refers to the specific input used in a particular case, like when we <strong>call</strong> the function.</li>
+		</ul> -->
+
+	<p style="margin-bottom:30px;"><span class="bold">Here's a handy way to remember it:</span></p>
+		<ul class="less-margin">
+			<li>The <span class="green bold">p</span>arameter is the <span class="green bold">p</span>arking space</li>
+			<li>The <span class="blue bold">a</span>rgument is the <span class="blue bold">a</span>utomobile</li>
+		</ul>
+
+<pre><code class="javascript" data-trim contenteditable="">
+// 3 parameters, don't know the values yet:
+function displayThreeWords (word1, word2, word3) {
+	console.log(word1 + ' ' + word2 + ' ' + word3);
+}
+
+// 3 arguments, specific values:
+displayThreeWords('pineapple', 'motorboat', 'toothbrush');
+</code></pre>
+
+</section>
+
+<section>
+	<h2>Returning outputs</h2>
+
+	<p>To get an output from your function, use the <code>return</code> keyword followed by the output value:</p>
+
+<pre><code class="javascript" data-trim contenteditable="">
+// Define a function with 1 parameter and an output:
+function shout (phrase) {
+	return phrase + '!!!';
+}
+
+// Run the function and save the output to a variable
+var myResult = shout('I got some output');
+
+// Display the output
+console.log(myResult);
+</code></pre>
+
+<p>Try it out! Notice that now we can <em>save</em> the results of our function, not just display them in the console.</p>
+
+</section>
+
+<section>
+	<h2>Return vs console.log</h2>
+
+	<p style="margin-bottom:40px;">Keep in mind that <code>console.log</code> displays information but doesn't save it.</p>
+
+	<p>So if you want to <em>use</em> the output from your function later on, you need to <code>return</code> it!</p>
+
+	<!-- We'll RETURN to this topic later (haha get it, return? =P ) -->
+</section>
+
+<section>
+	<h2 style="font-size:1.4em;margin-top:-60px;line-height:1.2;">Pair Programming Challenges:</h2>
+
+<!--
+	DEMONSTRATE PAIR PROGRAMMING on practice problem #1, then have students pair up
+-->
+
+	<ol class="medium-margin">
+		<li>Define a function called <code>sayHello</code> that takes <em>no</em> input parameters and returns as output a string that says hello to the world.</li>
+		<li>Define a function called <code>makeHeading</code> that takes one parameter, surrounds it inside <code>"&lt;h1&gt;"</code> and <code>"&lt;/h1&gt;"</code>, and returns the combination as its output.</li>
+		<li>Call the <code>sayHello</code> function and save its output in a new variable called <code>greeting</code>.</li>
+		<li>Call the <code>makeHeading</code> function, passing it your <code>greeting</code> variable as an argument, and save its output in <code>greeting</code> (overriding its old value).</li>
+		<li>Display this final result in the console. Beautiful!</li>
+	</ol>
+</section>
+
+<section>
+	<h2 style="font-size:1.4em;margin-top:-65px;">Challenge: Refactor our Mad Libs</h2>
+	<ol class="medium-margin">
+		<li>Choose a random new Mad Lib story from our list of links here: <a href="https://goo.gl/ELnYzm" target="_blank">goo.gl/ELnYzm</a></li>
+		<li>Scroll to the bottom and change the code so the Mad Lib is created inside a function that takes the input words (like "noun", etc) as parameters and returns the Mad Lib as its output.</li>
+		<li>At the top of the page, delete the input variables (like "noun", etc) and replace them all with a single call to your new function, providing it with specific strings as its arguments.</li>
+		<li>Display the output of the function in the console.</li>
+		<li>Click "Run" to test it out, click "Save" when you're done, and then click "Share", copy the link, and paste it back into here: <a href="https://goo.gl/ELnYzm" target="_blank">goo.gl/ELnYzm</a></li>
+	</ol>
+</section>
+
+<section>
+	<h2>Great work, coding ninjas!</h2>
+	<p>Now let's review our project goals again</p>
+
+	<!--
+		VERBAL instructions:
+		- Great job!! So now we know how to make the essence of the Mad Lib, but it's not very user-friendly or pretty in the console!
+	-->
+
+</section>
+
+<section>
+	<iframe src="madlibs/index.html" width="960" height="850" style="margin-top:-100px;"><a href="madlibs">Mad Libs demo</a></iframe>
+</section>
+
+<section>
+	<h2 style="font-size:1.5em;margin-bottom:60px;">What does our JavaScript code need to do for this app?</h2>
+	<p class="fragment" data-fragment-index="0" style="margin-bottom:40px;">Get user input from the HTML <code>&lt;input&gt;</code> elements</p>
+	<p class="fragment" data-fragment-index="1" style="margin-bottom:40px;"><span class="fragment highlight-current-blue" data-fragment-index="3"><span class="fragment fade-out" data-fragment-index="4">Combine user input with our Mad Lib story</span></span></p>
+	<p class="fragment" data-fragment-index="2" style="margin-bottom:70px;">Show finished Mad Lib when user clicks the button</p>
+	<p class="fragment fade-in green" data-fragment-index="4">...we're almost there!</p>
+
+	<!--
+		VERBAL instructions:
+		- We've already written a function that does step 2, woohoo!!
+		- So next we'll start learning about how to use JavaScript to manipulate the HTML page,
+		- and to do that we'll learn about some more built-in functions (there's way more than just console.log, haha)
+	-->
+
+</section>
+
+
+<section>
+	<h2>Manipulating HTML elements with JavaScript</h2>
+</section>
+
+<section>
+	<h2 style="font-size:1.4em;">The Document Object Model (DOM)</h2>
+
+	<img src="img/dom-tree.png" class="noborder"/>
+
+</section>
+
+
+<section>
+	<h2 style="font-size:1.4em;">The Document Object Model (DOM)</h2>
+
+	<p style="margin-bottom:40px;">The DOM organizes HTML pages as a <strong>hierarchy</strong> of elements, just like the file system on our computers.</p>
+
+	<p>It's built into every web browser to let developers <br>(like us!) modify the contents of our web pages.</p>
+</section>
+
+
+<section>
+	<h2 style="font-size:1.4em;">Document: Root of the tree</h2>
+
+	<p>The <em>root</em> of the hierarchy/tree is the <code>document</code> object, which contains all the other objects that<br> represent our HTML elements.</p>
+
+<pre><code class="javascript" data-trim contenteditable="">
+// Try opening your Mad Libs index.html in your browser,
+// and run this in the console to see what's inside:
+console.dir(document);
+</code></pre>
+
+	<p>Each of these objects contains <strong>properties</strong> like the text content of the HTML elements, their HTML attributes, and their CSS styles.</p>
+
+</section>
+
+<section>
+	<p style="margin-bottom:40px;">OK, the Document Object Model sounds cool!</p>
+	<h2 style="font-size:2.2em;">But what are objects?</h2>
+</section>
+
+<section>
+
+		<p>So far we've worked with simple variables, but what if we have a whole bunch of them?</p>
+<pre><code class="javascript" data-trim contenteditable="">
+var myName = "Sally Awesomepants";
+var myProfession = "full-stack JavaScript developer";
+var myAge = 32;
+var myFavColor = "purple";
+var myFavFood = "pizza";
+var myFavAnimal = "penguin";
+var myFavNumber = 3;
+</code></pre>
+
+	<p>If you have to track this data for hundreds of people, how would you even remember the names of all these variables?! There must be a better way!</p>
+
+</section>
+
+<section>
+	<h2 style="font-size:1.5em;margin-top:-40px;">Objects: bags of related variables</h2>
+
+		<p>You can think of an object as a bag full of variables, just a convenient way to carry them all together:</p>
+
+<!--
+	VERBAL instructions:
+	- point out this new notation, with colons and commas.
+-->
+
+<pre><code class="javascript" data-trim contenteditable="">
+var me = {
+	name: "Sally Awesomepants",
+	profession: "full-stack JavaScript developer",
+	age: 32,
+	favColor: "purple",
+	favFood: "pizza",
+	favAnimal: "penguin",
+	favNumber: 3
+};
+console.log("Hi, I'm " + me.name + ", a "
+	+ me.age + "-year-old " + me.profession + "!");
+</code></pre>
+
+	<p>This is just <em>one</em> of the ways to create an object, called <strong>object literal notation</strong>. But more on that later.</p>
+</section>
+
+<section>
+	<p>Not only can objects contain variables, but they can even contain their own functions!</p>
+
+	<!--
+		VERBAL instructions:
+		- don't worry about this syntax yet! this is just a preview to introduce the general concept.
+	-->
+
+<pre><code class="javascript" data-trim contenteditable="">
+var myObject = {
+	myProperty: "Here is some data!",
+	myMethod: function () {
+		console.log('Function inside an object!');
+	}
+}
+
+// Access a property of our object:
+console.log(myObject.myProperty);
+
+// Run a method of our object:
+myObject.myMethod();
+</code></pre>
+
+<p><span class="bold">Tech jargon tip:</span><br> when inside an object, its <span class="green">variables</span> are called <em class="bold green">properties</em>, and its <span class="blue">functions</span> are called <em class="bold blue">methods</em>.</p>
+
+</section>
+
+<section>
+	<h2>Let's "hack" Google!</h2>
+
+		<p style="margin-bottom: 40px;">Go to <a href="https://www.google.com/" target="_blank">Google.com</a> and then open your browser console once you're on their homepage.</p>
+		<p>Next, run this code in the console:</p>
+
+<pre><code class="javascript" data-trim contenteditable="">
+document.body.textContent = 'You got hacked!';
+</code></pre>
+
+	<p class="fragment" data-fragment-index="0"><em class="bold">OK, just kidding!</em></p>
+	<p class="fragment" data-fragment-index="0">Thankfully, it's not that easy to hack a website. These changes are temporary, and they only appear on <em>your</em> computer; nobody else will see them.
+</section>
+
+<section>
+	<h2>The textContent property</h2>
+
+	<p>Every element in the DOM has a <code>textContent</code> property that contains the text inside the HTML element it represents. Let's try this out:</p>
+
+<pre><code class="javascript" data-trim contenteditable="">
+// Put this code in your madlibs.js file, then save it
+// and open your index.html file in your web browser.
+var bodyText = document.body.textContent;
+console.log(bodyText);
+
+// SHORTCUT: you could also combine those two lines of code,
+// no variable needed:
+// console.log( document.body.textContent );
+</code></pre>
+
+	<p>Interesting, right? That's all the text in your web page, without the HTML tags! This can be useful...</p>
+
+</section>
+
+<section>
+	<h2 style="font-size:1.3em;line-height:1.2;">But what if we want the text of just<br> <em>one</em> element, not the whole body?</h2>
+
+	<p style="margin-bottom: 40px;">First we need a way to identify it! One way is with <code class="bold green">document.getElementById()</code>, a built-in method of the <code>document</code> object for finding one particular element:</p>
+
+<pre><code class="javascript" data-trim contenteditable="">
+var myElement = document.getElementById('test');
+</code></pre>
+
+<p>It takes one <code>string</code> as an argument, which should match the ID of the HTML element you want to get.</p>
+
+</section>
+
+<section>
+	<h2 style="font-size:1.3em;">Let's try <code>document.getElementById</code>!</h2>
+
+	<p id="changebox" style="font-weight:bold;border:4px solid black;padding:20px; height:120px; width: 200px; margin:0 20px 40px 0;float:left;">Change me!</p>
+
+	<div style="float:right">
+		<p>The HTML for the box on this page is:
+		<pre style="margin-top:20px;"><code class="html">&lt;p id=&quot;changebox&quot;&gt;Change me!&lt;/p&gt;</code></pre></p>
+	</div>
+
+	<p style="clear:both;">Let's change its text! Open your browser console while you're on this slide and try running this code:</p>
+
+<pre style="margin-top:20px;"><code class="javascript" data-trim contenteditable="">
+// Identify the box by its ID:
+var box = document.getElementById('changebox');
+
+// Display its current text content:
+console.log(box.textContent);
+
+// Change its text content:
+box.textContent = 'Voila! JavaScript magic!';
+</code></pre>
+
+</section>
+
+<section>
+	<h2 style="font-size:1.3em;margin-top:-50px;">Now try it again, but with an input box!</h2>
+
+	<input id="changeinput" value="Change me!" style="margin:30px;padding:10px;width:210px;font-size:1em;float:left;">
+
+	<div style="float:right">
+		<p>The HTML for this input box:
+		<pre style="margin-top:20px;"><code class="html">&lt;input id=&quot;changeinput&quot; value=&quot;Change me!&quot;&gt;</code></pre></p>
+	</div>
+
+	<p style="clear:both;">Close and reopen your browser console, then try:</p>
+
+<pre style="margin-top:20px;"><code class="javascript" data-trim contenteditable="">
+// Identify the input box by its ID:
+var input = document.getElementById('changeinput');
+
+// Notice that its text content is empty!
+console.log(input.textContent);
+
+// We need to use the value property instead:
+console.log(input.value);
+
+// Change its value:
+input.value = 'new value!';
+</code></pre>
+
+</section>
+
+<section>
+	<h2>textContent vs value</h2>
+
+	<p style="margin-bottom:40px;">So just remember: you need to use the <code>value</code> property to get the text inside any form elements.</p>
+	<p>For pretty much all other types of HTML elements, the <code>textContent</code> property will work fine.</p>
+</section>
+
+<section>
+	<h2 style="font-size:1.4em;">Pair Programming Challenge:<br> Get the value of each Mad Lib input</h2>
+	<p style="margin-bottom:40px;"><span class="bold">1)</span> Look inside your <code>index.html</code> file and find the IDs of each input box; you're gonna need them!</p>
+
+	<p style="margin-bottom:40px;"><span class="bold">2)</span> Create a JavaScript variable containing the value of each input box in your <code>madlibs.js</code> file by using the <code>getElementById</code> method of the <code>document</code> object.</p>
+
+	<p class="small">Be sure to look through the previous slides to review what we've learned so far. And don't be afraid to experiment and break stuff; that's the best way to learn!</p>
+
+</section>
+
+<section>
+	<h2>Solution</h2>
+
+<pre><code class="javascript" data-trim contenteditable="">
+// Get the values of HTML input boxes
+// with the IDs "noun", "verb", and "adjective"
+var noun = document.getElementById('noun').value;
+var verb = document.getElementById('verb').value;
+var adjective = document.getElementById('adjective').value;
+
+// For testing purposes, display the values in the console
+console.log(noun, verb, adjective);
+</code></pre>
+
+	<p>Save your <code>madlibs.js</code> file, open <code>index.html</code> in the browser, write some text in the input boxes, and then open the console!</p>
+</section>
+
+<section>
+	<h2>It didn't work! Why not?</h2>
+
+	<p class="fragment" style="margin-bottom:40px;">Oh yeah, our code runs as soon as we go to our web page (<code>index.html</code>), before we can type anything into the input boxes! Order of events matters!</p>
+
+	<h3 class="fragment" style="margin-bottom:40px;">When should our code run?</h3>
+
+	<p class="fragment" style="">When the user clicks the button.<br> Let's make it happen!</p>
+</section>
+
+<section>
+	<p>First, let's look at the bigger picture:</p>
+	<h2>Event-Based Programming</h2>
+</section>
+
+<section>
+	<div class="left" style="width:50%;box-sizing:border-box;">
+		<h2 style="font-size:1.3em;">Procedural Code</h2>
+		<ul style="font-size:0.9em;">
+			<li class="fragment highlight-current-blue" data-fragment-index="0">Code runs when you start the program</li>
+			<li class="fragment highlight-current-blue" data-fragment-index="1">Predictable, runs in the same order every time</li>
+			<li class="fragment highlight-current-blue" data-fragment-index="2">Common in beginner tutorials, probably what you're used to</li>
+		</ul>
+	</div>
+	<div class="right" style="width:50%;box-sizing:border-box;">
+		<h2 style="font-size:1.3em;">Event-Based Code</h2>
+		<ul style="font-size:0.9em;">
+			<li class="fragment highlight-current-blue" data-fragment-index="0">Code runs when an event triggers it (like user input)</li>
+			<li class="fragment highlight-current-blue" data-fragment-index="1">Can't predict when code will run or in what order</li>
+			<li class="fragment highlight-current-blue" data-fragment-index="2">Probably new to you, and it will feel a bit weird!</li>
+		</ul>
+	</div>
+</section>
+
+<section>
+	<h2>The Event Loop</h2>
+
+	<img src="img/domino-loop.gif">
+
+	<p style="margin-top:40px;">The <strong>event loop</strong> is some code that is constantly running in the background. It checks if any events have happened and runs your code at the right time.</p>
+
+</section>
+
+<section>
+	<h2 style="margin-bottom:50px;font-size:1.5em;">Event-based programming is <em>everywhere!</em></h2>
+	<p style="margin-bottom:40px;">Anywhere you deal with user input, you'll see<br> event-based programming.</p>
+	<p>It's built into every web browser too!</p>
+</section>
+
+<section>
+	<h2 style="margin-bottom:50px;">There are <em>lots</em> of events built into JavaScript.</h2>
+	<p>See the <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/Events">MDN event reference page</a> for a <em>gigantic</em> list!</p>
+</section>
+
+<section>
+	<h2 style="font-size:1.5em;">Events can trigger other events</h2>
+	<img src="img/human-dominoes.gif" width="500">
+	<p style="margin-top:40px;">You can create chain reactions in your code, not unlike a row of dominoes!</p>
+</section>
+<!--
+- You can create all sorts of interesting and complex interactions!
+- But the downside is....
+-->
+
+<section>
+	<h2 style="font-size:1.5em;">But sometimes it's hard to get<br> it working</h2>
+	<img src="img/no-dominoes.gif" width="500">
+	<p style="margin-top:40px;">Event-based programming can be harder to learn and harder to debug, so be prepared for some frustration.</p>
+</section>
+<!--
+- Event-based programming can be harder to wrap your head around.
+- Need to make sure your code runs in every possible situation
+-->
+
+<section>
+	<p>Let's look at some code!</p>
+	<h2>JavaScript Event Listeners</h2>
+
+</section>
+
+<section>
+	<h2 style="font-size:1.5em;margin-top:-40px;">Breakdown of the<br> JavaScript Event Listener</h2>
+
+<pre style="font-size:1em;width:100%;" contenteditable="">
+<span class="fragment highlight-current-red" data-fragment-index="0">document</span>.<span class="fragment highlight-current-red" data-fragment-index="1">addEventListener</span>(<span class="fragment highlight-current-red" data-fragment-index="2">'click'</span>, <span class="fragment highlight-current-red" data-fragment-index="3">myFunction</span>);
+
+function <span class="fragment highlight-current-red" data-fragment-index="3">myFunction</span>(<span class="fragment highlight-current-red" data-fragment-index="4">event</span>) {
+
+	console.log(event);
+
+}
+</pre>
+<!--
+	***	QUESTION FOR EVERYONE: what does this code do? when does it run?
+-->
+		<p class="fragment fade-out steps" data-fragment-index="0">There are <strong class="pink">five parts</strong> to a standard JavaScript<br> event listener</p>
+
+		<p class="fragment current-visible steps" data-fragment-index="0">
+			<strong class="pink">Part 1: Where the events will happen</strong> <br>(in this case, the whole HTML document object)
+		</p>
+
+		<p class="fragment current-visible steps" data-fragment-index="1">
+			<strong class="pink">Part 2: Start listening for events</strong> <br>(with JavaScript's built-in addEventListener method)
+		</p>
+
+		<p class="fragment current-visible steps" data-fragment-index="2">
+			<strong class="pink">Part 3: The type of event</strong> <br>(see <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/Events">this reference list</a> or make up your own)
+		</p>
+
+		<p class="fragment current-visible steps" data-fragment-index="3">
+			<strong class="pink">Part 4: The name of the function to run<br> when the event happens</strong> <br>(known as the "callback" function)
+		</p>
+
+		<p class="fragment current-visible steps" data-fragment-index="4">
+			<strong class="pink">Part 5: This parameter receives an object with info about the event</strong> <br>(different events give you different information)
+		</p>
+
+		<p class="fragment current-visible steps" data-fragment-index="5">
+			<strong class="pink">Let's try it!</strong> Open your console and run this code, then click on the page and check the console again.
+		</p>
+
+</section>
+
+<section>
+	<h2>Behold! Event data!</h2>
+	<p style="margin-bottom:20px;">
+		You should see a MouseEvent object in the console. Click to expand the data:
+	</p>
+	<img src="img/console-expand-object.gif" width="600">
+	<p style="margin-top:20px;">
+		Each event has different properties, which you can use to control all sorts of cool things!<br> But more on that later.
+	</p>
+</section>
+
+<section>
+	<h2>Let's finish our Mad Libs project!</h2>
+</section>
+
+<section>
+	<h2 style="font-size:1.5em;margin-bottom:60px;">What does our JavaScript code need to do for this app?</h2>
+	<p style="margin-bottom:40px;"><span class="fragment highlight-current-blue" data-fragment-index="4"><span class="fragment fade-out" data-fragment-index="5">Get user input from the HTML <code>&lt;input&gt;</code> elements</span></span></p>
+	<p style="margin-bottom:40px;"><span class="fragment highlight-current-blue" data-fragment-index="3"><span class="fragment fade-out" data-fragment-index="4">Combine user input with our Mad Lib story</span></span></p>
+	<p style="margin-bottom:70px;">Show finished Mad Lib when user clicks the button</p>
+	<p class="fragment fade-in green" data-fragment-index="5">...last piece of the puzzle!</p>
+</section>
+
+<section>
+	<p class="pink">Your code in <code>madlibs.js</code> should look like this so far:</p>
+<pre><code class="javascript" data-trim contenteditable="">
+// Get the values of HTML input boxes
+// with the IDs "noun", "verb", and "adjective"
+var noun = document.getElementById('noun').value;
+var verb = document.getElementById('verb').value;
+var adjective = document.getElementById('adjective').value;
+
+// For testing purposes, display the values in the console
+console.log(noun, verb, adjective);
+</code></pre>
+</section>
+
+<section>
+	<h2 style="font-size:1.4em;">Challenge: Working Mad Libs, Part 1</h2>
+	<ol class="medium-margin">
+		<li>In <code>madlibs.js</code>, take all the code (shown on the last slide) and put it all inside a new function called <code>showMadLib</code> that takes no parameters.</li>
+		<li>Define another function called <code>createMadLib</code>, which takes 3 parameters (noun, verb, and adjective), combines them into a sentence, and returns the combined string as output.</li>
+		<li>Inside your <code>showMadLib</code> function, create a variable called <code>madLib</code> and set its value equal to the result of calling <code>createMadLib</code> with <code>noun</code>, <code>verb</code>, and <code>adjective</code> as its arguments.</li>
+	</ol>
+</section>
+
+<section>
+	<h2>Part 1 Solution</h2>
+<pre style="font-size:0.5em;width:100%;"><code class="javascript" data-trim contenteditable="">
+function showMadLib() {
+	// Get the values of HTML input boxes with the IDs "noun", "verb", and "adjective"
+	var noun = document.getElementById('noun').value;
+	var verb = document.getElementById('verb').value;
+	var adjective = document.getElementById('adjective').value;
+
+	// For testing purposes, display the values in the console
+	console.log(noun, verb, adjective);
+
+	// Make the Mad Lib and save it to a variable
+	var madLib = createMadLib(noun, verb, adjective);
+}
+
+function createMadLib(noun, verb, adjective) {
+	return 'Bob robbed the bank with a deadly ' + noun + ', but then his ' + adjective + ' girlfriend ' + verb + ' the cash!';
+}
+</code></pre>
+</section>
+
+<section>
+	<h2 style="font-size:1.4em;">Challenge: Working Mad Libs, Part 2</h2>
+	<ol class="medium-margin">
+		<li>Inside your <code>showMadLib</code> function (at the end of it), use <code>document.getElementById</code> to create a JavaScript object for the HTML element <code>&lt;div id=&quot;madlib&quot;&gt;&lt;/div&gt;</code></li>
+		<li>Right after that (also inside the showMadLib function), set that object's <code>textContent</code> equal to your finished Mad Lib string.</li>
+	</ol>
+</section>
+
+<section>
+	<h2>Part 2 Solution</h2>
+<pre style="font-size:0.5em;width:100%;"><code class="javascript" data-trim contenteditable="">
+function showMadLib() {
+	// Get the values of HTML input boxes with the IDs "noun", "verb", and "adjective"
+	var noun = document.getElementById('noun').value;
+	var verb = document.getElementById('verb').value;
+	var adjective = document.getElementById('adjective').value;
+
+	// For testing purposes, display the values in the console
+	console.log(noun, verb, adjective);
+
+	// Make the Mad Lib and save it to a variable
+	var madLib = createMadLib(noun, verb, adjective);
+
+	// Make a JavaScript object for the HTML element with id "madlib"
+	var madLibContainer = document.getElementById('madlib');
+
+	// and change its contents to contain our madLib string
+	madLibContainer.textContent = madLib;
+}
+
+function createMadLib(noun, verb, adjective) {
+	return 'Bob robbed the bank with a deadly ' + noun + ', but then his ' + adjective + ' girlfriend ' + verb + ' the cash!';
+}
+</code></pre>
+</section>
+
+<section>
+	<h2 style="font-size:1.4em;margin-top:-50px;">Challenge: Working Mad Libs, Part 3</h2>
+	<ol class="medium-margin">
+		<li>Look inside your <code>index.html</code> file and identify the ID of the submit button.</li>
+		<li>At the very end of <code>madlibs.js</code> (not inside any functions), use <code>document.getElementById</code> again to create a JavaScript object for the submit button.</li>
+		<li>Right below that, set an event listener on the button! You can just copy-paste our event listener example code, but replace <code>document</code> with your button object.</li>
+		<li>Make sure that the second argument of your event listener should be the name of your custom function <code>showMadLib</code>.</li>
+		<li>Save the file and test it out!</li>
+	</ol>
+</section>
+
+<section>
+	<h2>Part 3 Solution</h2>
+<pre style="font-size:0.5em;width:100%;"><code class="javascript" data-trim contenteditable="">
+// *** PART 3 CODE (this can be at the top of the file or at the bottom, doesn't matter):
+
+// Make a JavaScript object for the HTML submit button
+var submitButton = document.getElementById('submit');
+
+// When submit button is clicked, run the showMadLib function
+submitButton.addEventListener('click', showMadLib);
+
+// *** THE REST IS THE SAME AS SOLUTION 2:
+
+function showMadLib() {
+	// Get the values of HTML input boxes with the IDs "noun", "verb", and "adjective"
+	var noun = document.getElementById('noun').value;
+	var verb = document.getElementById('verb').value;
+	var adjective = document.getElementById('adjective').value;
+
+	// For testing purposes, display the values in the console
+	console.log(noun, verb, adjective);
+
+	// Make the Mad Lib and save it to a variable
+	var madLib = createMadLib(noun, verb, adjective);
+
+	// Make a JavaScript object for the HTML element with id "madlib"
+	var madLibContainer = document.getElementById('madlib');
+
+	// and change its contents to contain our madLib string
+	madLibContainer.textContent = madLib;
+}
+
+function createMadLib(noun, verb, adjective) {
+	return 'Bob robbed the bank with a deadly ' + noun + ', but then his ' + adjective + ' girlfriend ' + verb + ' the cash!';
+}
+</code></pre>
+</section>
+
+<section>
+	<h2>Congrats! You're mastering JavaScript!</h2>
+	<p>Let's add one final touch to make the Mad Lib prettier...</p>
+</section>
+
+<section>
+	<h2>textContent vs innerHTML</h2>
+
+	<p>The <code>textContent</code> property lets us change the <em>plain</em> text inside an HTML element, but the <code>innerHTML</code> property lets us use HTML as well as text!</p>
+
+<pre><code class="javascript" data-trim contenteditable="">
+// Copy this code, go to Google.com again,
+// open your console and run this code:
+document.body.innerHTML = '&lt;h1&gt;Hello world!&lt;/h1&gt; &lt;img src=&quot;http://i2.kym-cdn.com/photos/images/original/000/114/779/0002.gif&quot;&gt;';
+</code></pre>
+
+<p>Fun, isn't it?? Just don't abuse your new super powers!</p>
+
+</section>
+
+<section>
+	<h2 style="margin-top:-50px;">Prettify your Mad Lib</h2>
+
+	<p class="small" style="margin-bottom:40px;">In your <code>madlibs.js</code> file, replace <code>madLibContainer.textContent</code> with <code>madLibContainer.innerHTML</code>.</p>
+
+	<p class="small">Then surround the noun, verb, and adjective in your Mad Lib string with <code>&lt;span class=&quot;fill&quot;&gt;&lt;/span&gt;</code> HTML tags like this:</p>
+
+<pre><code class="javascript" data-trim contenteditable="">
+function createMadLib(noun, verb, adjective) {
+	return 'Bob robbed the bank with a deadly
+	<span class="fill">' + noun + '</span>,
+	 but then his <span class="fill">' + adjective
+	  + '</span> girlfriend <span class="fill">'
+	 + verb + '</span> the cash!';
+}
+</code></pre>
+
+<p class="small">Save it, open <code>index.html</code> in your browser again, and try it out! Now it's using the custom CSS in your <code>style.css</code> file!</p>
+
+</section>
+
+
+
+					<section>
+						<h2 style="margin-top:-50px;color:#53555C;line-height:1.5em;">Thank you, and happy coding! :)</h2>
+
+						<h3><a href="https://www.meetup.com/LearnTeachCode/" target="_blank">meetup.com/LearnTeachCode</a></h3>
+					</section>
+
+			</div>
+  		<footer>
+        <div class="copyright">
+        </div>
+      </footer>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+
+
+		<script>
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/accessibility-helper/js/accessibility-helper.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+			Reveal.addEventListener( 'movethebox', function() {
+				var box = document.getElementById("movebox");
+
+				window.addEventListener("keydown", moveBox);
+
+				function moveBox(event) {
+				  if (event.keyCode == '83') {
+					var currentTopPosition = parseInt(box.style.top, 10);
+					var newTopPosition = currentTopPosition + 10;
+					box.style.top = newTopPosition + "px";
+				  }
+
+				  if (event.keyCode == '87') {
+					// save the current position as a number
+					var currentTopPosition = parseInt(box.style.top, 10);
+					var newTopPosition = currentTopPosition - 10;
+					box.style.top = newTopPosition + "px";
+				  }
+
+				  if (event.keyCode == '68') {
+					// save the current position as a number
+					var currentLeftPosition = parseInt(box.style.left, 10);
+					var newLeftPosition = currentLeftPosition + 10;
+					box.style.left = newLeftPosition + "px";
+				  }
+
+				  if (event.keyCode == '65') {
+					// save the current position as a number
+					var currentLeftPosition = parseInt(box.style.left, 10);
+					var newLeftPosition = currentLeftPosition - 10;
+					box.style.left = newLeftPosition + "px";
+				  }
+
+				}
+			}, false );
+
+			Reveal.addEventListener( 'colorthebox', function() {
+				var colorBoxSolved = document.getElementById('colorboxsolved');
+				colorBoxSolved.addEventListener('click', randomColor);
+				function randomColor() {
+				 	colorBoxSolved.style.background = '#' + Math.floor(Math.random()*16777215).toString(16);
+
+				}
+
+			}, false );
+
+		</script>
+
+	</body>
+</html>

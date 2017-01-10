@@ -1,0 +1,59 @@
+body {
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	margin: 0 auto;
+	text-align: center;
+	padding: 0 20px;
+	max-width: 800px;
+	font-size: 25px;
+	background: #efefef;
+}
+
+button {
+	font-size: 25px;
+	font-weight: bold;
+	padding: 10px;
+	margin: 10px;
+}
+
+input.fill {
+	display: block;
+	width: 400px;
+	max-width:95%;
+	margin:0 auto;
+	margin-bottom: 20px;
+	box-sizing: border-box;
+}
+
+.fill {
+	font-size: 30px;
+	font-weight: bold;
+	font-family: 'Waiting for the Sunrise', cursive;
+	letter-spacing: 5px;
+	background: white;
+	color: red;
+	margin-left: 4px;
+	margin-right: 4px;
+	padding: 5px 15px;
+}
+
+#madlib {
+	font-size: 30px;
+	line-height: 2.5;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+h1 {
+	font-size: 80px;
+	margin: 0;
+	color: red;
+	font-family: 'Waiting for the Sunrise', cursive;
+	font-weight: bold;
+	letter-spacing: 7px;
+}
+
+.small {
+	font-size:0.5em;
+	font-style: italic;
+	margin-top: 30px;
+}
